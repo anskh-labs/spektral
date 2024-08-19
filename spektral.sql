@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 -- Database: `spektral`
 --
 
--- --------------------------------------------------------
-
 --
 -- Table structure for table `dbo_dokumentasi_pembinaan`
 --
@@ -42,19 +40,6 @@ CREATE TABLE `dbo_dokumentasi_pembinaan` (
   `approve_by` int(11) UNSIGNED DEFAULT NULL,
   `approve_at` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
---
--- Dumping data for table `dbo_dokumentasi_pembinaan`
---
-
-INSERT INTO `dbo_dokumentasi_pembinaan` (`id`, `permintaan_id`, `judul`, `berita`, `gambar`, `tanggal`, `is_active`, `create_by`, `update_by`, `create_at`, `update_at`, `approve_by`, `approve_at`) VALUES
-(1, NULL, 'Kepala BPS Provinsi Riau, melakukan kunjungan ke beberapa media terkemuka di Provinsi Riau', 'Didampingi tim Humas, Diseminasi dan Agro ST2023. Drs. Misfaruddin M.Si mengawali kunjungannya ke stasiun TVRI Riau, yang beralamat di jalan Durian, Kota Pekanbaru. Disambut dengan hangat oleh Ketua LPP TVRI Stasiun Riau, Darma Setiawan, S.E. beserta jajarannya. Misfaruddin menyampaikan ucapan terima kasih atas kolaborasi yang sudah berjalan baik antara BPS dengan TVRI selama ini. Seluruh Indikator strategis yang dihasilkan oleh BPS Provinsi Riau selalu diberitakan secara berimbang oleh TVRI. <br>Selanjutnya, Misfar juga menyampaikan bahwa BPS Provinsi Riau mempunyai 2 agenda besar yang akan dilaksanakan dalam waktu dekat ini. Agenda besar yang pertama yaitu Forum Konsultasi Publik (FKP) hasil pendataan lapangan Registrasi Sosial Ekonomi (Regsosek) yang saat ini masih dalam tahap pengolahan. FKP Regsosek itu sendiri akan dilaksanakan di Bulan Mei 2023 nanti. Selain itu juga disampaikan agenda besar yang kedua yaitu kegiatan lapangan Sensus Pertanian 2023 yang akan dilaksanakan pada bulan Juni dan Juli. Terkait 2 agenda besar ini, Misfar berharap, TVRI dapat membantu kembali BPS dalam mensosialisasikannya kepada masyarakat. <br>Dengan agenda silaturahmi yang sama, rombongan BPS Provinsi Riau selanjutnya berkunjung ke kantor Riau Pos yang beralamat di Gedung Graha Pena Riau. Diterima oleh Pimpinan Redaksi Firman Agus beserta jajarannya. Selain menyampaikan indikator strategis Provinsi Riau selama tahun 2022 yang sudah dihasilkan oleh BPS, Misfar juga tak lupa meminta dukungan sosialisasi untuk kegiatan FKP Regsosek dan kegiatan lapangan Sensus Pertanian ST2023.<br>Sebelum meninggalkan Gedung Graha Pena, tak lupa Bang Fen, sapaan akrab Firman Agus mengundang BPS untuk dapat mengikuti turnamen badminton yang akan diselenggarakan oleh Riau Pos tanggal 22 Februari yang akan datang.', '1717923387.jpg', '2023-02-07', 1, 2, 2, 1717920581, 1718003962, NULL, NULL),
-(2, NULL, 'FGD Potensi Desa Provinsi Riau 2024', 'Pekanbaru (29/02/2024) Pendataan Potensi Desa (Podes 2024) kini hadir kembali di tahun 2024, tepatnya akan dilaksanakan pada Mei 2024. Berbagai persiapan dilakukan dalam rangka meningkatkan sinergi antarlembaga sekaligus memantapkan persiapan pelaksanaan Podes 2024, salah satunya pelaksanaan Focus Group Discussion (FGD) Pendataan Podes yang dilaksanakan pada 29 Februari 2024 di Aula Lantai III BPS Provinsi Riau. FGD yang dihadiri oleh Dinas Pemberdayaan Masyarakat Desa, Kependudukan, dan Pencatatan Sipil Provinsi Riau; Dinas Komunikasi, Informatika, dan Statistik Provinsi; dan 24 dinas/Lembaga di ruang lingkup pemerintahan Provinsi Riau bertujuan untuk mengumpulkan data pendukung Podes yang akan dijadikan sebagai alat kontrol pada evaluasi kualitas data.<br>Pembukaan acara dan diskusi dipimpin langsung oleh Meita Komalasari, SST, M.Si selaku Ketua Tim Statistik Sosial. Pendataan Podes 2024 ini nantinya akan menghasilkan data berbasis kewilayahan yang dimiliki oleh semua tingkatan wilayah administrasi pemerintahan: kabupaten/kota, kecamatan, dan desa/kelurahan. Selain itu, Podes 2024 juga digunakan untuk pembentukan Indeks Kesulitan Geografis (IKG) yang dapat digunakan untuk memetakan wilayah kantong kemiskinan dan untuk pengalokasian dana desa.', '1717920814.jpg', '2024-02-29', 1, 2, 2, 1717920814, 1718003840, NULL, NULL),
-(3, NULL, 'FGD Indeks Demokrasi Indonesia (IDI)', 'Pekanbaru (14/03/2024), Indeks Demokrasi Indonesia (IDI) merupakan ukuran pembangunan politik yang digunakan pemerintah pada Rencana Pembangunan Jangka Menengah Nasional (RPJMN) 2010-2014, 2015-2019, serta 2020-2024.<br>IDI adalah <em>Fact-Based Information</em>, karena sebagian besar datanya berasal dari kejadian nyata yang bisa diobservasi dan diintervensi. IDI merupakan kerja bersama instansi pemerintah yaitu Kementrian Koordinator Bidang Politik Hukum dan Keamanan (Kemenkopolhukam), BPS, Badan Perencanaan Pembangunan Nasional (Bappenas), Kementrian Dalam Negeri (Kemendagri), serta Pemerintah Daerah.<br>Penyelanggaran acara Focus Group Discussion IDI yang bertempat di Aula Badan Kesatuan Bangsa dan Politik (Bakesbangpol) Provinsi Riau dihadiri secara langsung oleh Kepala BPS Provinsi Riau, Asep Riyadi dan Kepala Bakesbangpol Provinsi Riau Jenri Salmon Ginting beserta jajarannya.<br>Agenda ini terselenggara sebagai salah satu upaya peningkatan aspek pembentuk IDI, yakni aspek kesetaraan, kebebasan, dan kapasitas lembaga demokrasi.', '1717920913.jpg', '2024-03-14', 1, 2, 2, 1717920913, 1718003848, NULL, NULL),
-(4, NULL, 'Bimbingan Teknis Seksi Penjaminan Kualitas Data Kanwil DJP Riau Tahun 2023', 'Pekanbaru (Kamis, 12 Oktober 2023), Kepala BPS Provinsi Riau Bapak Asep Riyadi, S.Si, MM berkesempatan untuk menjadi narasumber dan memberikan paparan materi terkait Perkembangan Ekonomi Riau 2023 dan Prospek 2024 dalam kegiatan Bimbingan Teknis Seksi Penjaminan Kualitas Data Kanwil DJP Riau, dengan tema â€œMelangkah Bersama Dalam Meningkatkan Kualitas Data.â€ Kegiatan ini berlangsung di meeting hall Fox Hotel Pekanbaru.<br>Kegiatan Bimtek yang diusung oleh Kanwil DJP Riau ini menghadirkan jajaran pejabat struktural dalam hal ini Kepala Seksi Penjaminan Kualitas Data dari seluruh KPP Pratama yang tersebar di 8 wilayah kabupaten/kota di Provinsi Riau. Adapun tujuan dari kegiatan Bimtek ini adalah untuk meningkatkan literasi para pejabat yang bertanggungjawab terhadap penjaminan kualitas data di lingkungan KPP Pratama terhadap statistik, baik secara teknis maupun empiris terutama yang berkaitan dengan potensi utama penerimaan pajak di Provinsi Riau, yakni sektor perkebunan sawit dan industri pengolahan. Hal ini sejalan dengan yang disampaikan oleh Ibu Laela Nikulina selaku Kepala Bidang Data Potensi Perpajakan Kanwil DJP Riau pada narasi pembukaan yang beliau sampaikan.<br>Dalam kesempatan ini Kepala BPS Provinsi Riau menyampaikan betapa penting dan strategisnya posisi pajak terhadap pendapatan negara, DJP harus selalu memiliki target terkait apakah penerimaan pajak akan menurun, stagnan, atau meningkat di setiap tahun pajak, berangkat dari hal tersebut juga harus diantisipasi apakah pembiayaan negara akan surplus atau defisit. Dari sisi praktisnya hal ini tentu saja tidak terlepas dari data-data statistik beserta indikator-indikator strategis yang ada di wilayah yang bersangkutan. Dengan lebih dipahaminya makna dari setiap indikator-indikator statistik yang relevan dengan lingkup perpajakan, maka diharapkan potensi penerimaan pajak akan dapat lebih dioptimalkan.', '1717984351.jpg', '2023-10-12', 1, 2, 2, 1717921032, 1718003624, NULL, NULL),
-(6, NULL, 'Asep Riyadi Menjadi Narasumber Dalam Acara Milad ke-22 Prodi Matematika UIN SUSKA Riau', 'Pekanbaru (04/06/2024), Dalam rangkaian acara peringatan Milad Program Studi (Prodi) Matematika Fakultas Sains dan Teknologi Universitas Islam Negeri Sultan Syarif Kasim (UIN SUSKA) Riau, Kepala BPS Provinsi Riau Asep Riyadi S.Si., M.M. hadir sebagai narasumber seminar dengan tema â€œPeran Strategis Statistikawan dalam Dunia Industri di Era Digitalâ€ yang berlangsung di Aula Rektorat lantai 5 Kampus UIN SUSKA Riau.<br>Acara dihadiri sekaligus dibuka oleh Wakil Rektor III UIN Suska Riau Prof.Edi Erwan, S.Pt., M.Sc., Ph.D. Dalam pembukaan Milad Prodi Matematika UIN SUSKA Riau yang ke-22 ini beliau menuturkan bahwa Prodi Matematika UIN SUSKA Riau telah mendapatkan Predikat Unggul dan akan terus berupaya untuk menjadi program studi yang berdaya saing. Turut hadir pula Dekan Fakultas Sains dan Teknologi, Dr. Hartono, M.Pd. serta Ketua Prodi Matematika Fakultas Sains dan Teknologi, Wartono, M.Sc.<br>Asep Riyadi dalam paparannya mengajak seluruh mahasiwa yang hadir untuk bangga sebagai mahasiswa Prodi Matematika dan memberi motivasi kepada mahasiswa agar bersiap menghadapi megatrend dunia 2045 pilar pembangunan Indonesia 2045 bertumpu pada pembangunan manusia dan penguasaan IPTEK, pembangunan ekonomi yang berkelanjutan, pemerataan pembangunan, serta pemantapan ketahanan nasional dan tata kelola kepemerintahan. Asep Riyadi juga menjelaskan peran statistisi di era digital serta essential skills yang harus dimiliki mulai dari statistical knowledge, data analysis, AI understanding, serta communication. Kebutuhan akan staistisi di dunia industri semakin menggeliat dengan didorong penggunaan Big Data yang terhubung dengan berbagai kepentingan di banyak sektor.', '1717984431.jpg', '2024-06-04', 1, 2, 2, 1717984431, 1718635567, NULL, NULL);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `dbo_kategori_modul_literasi`
@@ -79,8 +64,6 @@ INSERT INTO `dbo_kategori_modul_literasi` (`id`, `nama`, `deskripsi`, `create_at
 (2, 'Statistik Produksi', 'Modul ini berisi penjelasan mengenai statisti produksi seperti  pertambangan, energi, industri pengolahan, pertanian, kehutanan, peternakan, perikanan, dll.', 1717575406, NULL, 2, NULL),
 (3, 'Statistik Distribusi', 'Modul ini berisi penjelasan mengenai statistik distribusi seperti harga, inflasi, pariwisata, perdagangan, transportasi, akomodasi, dll.', 1717575406, NULL, 2, NULL),
 (4, 'Statistik Neraca Wilayah dan Analisis Statistik', 'Modul ini berisi penjelasan mengenai statistik neraca willayah seperti pertumbuhan ekonomi, PDRB, IPM, IPG, dll.', 1717575406, NULL, 2, NULL);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `dbo_kategori_modul_pembinaan`
@@ -109,8 +92,6 @@ INSERT INTO `dbo_kategori_modul_pembinaan` (`id`, `nama`, `deskripsi`, `create_a
 (6, 'Desa/Kelurahan Cinta Statistik', 'Modul Desa/Kelurahan Cinta Statistik berisi penjelasan terkait pembinaan statistik di pemerinahan desa/kelurahan.', 1722218286, NULL, 2, NULL),
 (7, 'Umum dan Peraturan', 'Modul Umum dan Peraturan berisi penjelasan mengenai dasar hukum dan peraturan terkait pembinaan statistik, selain itu juga memuat modul yang umum yang tidak diklasifikasikan ke kategori yang ada.', 1722218286, NULL, 2, NULL);
 
--- --------------------------------------------------------
-
 --
 -- Table structure for table `dbo_migrations`
 --
@@ -121,28 +102,6 @@ CREATE TABLE `dbo_migrations` (
   `action` varchar(20) NOT NULL,
   `create_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
---
--- Dumping data for table `dbo_migrations`
---
-
-INSERT INTO `dbo_migrations` (`id`, `migration`, `action`, `create_at`) VALUES
-(1, 'm0001_user.php', 'up', '2024-02-12 05:08:26'),
-(2, 'm0001_user.php', 'seed', '2024-02-12 05:08:26'),
-(3, 'm0002_modul.php', 'up', '2024-02-13 04:14:41'),
-(4, 'm0003_testimoni.php', 'up', '2024-02-26 07:43:27'),
-(5, 'm0003_testimoni.php', 'seed', '2024-02-26 07:48:35'),
-(6, 'm0004_modul_category.php', 'up', '2024-05-28 09:40:04'),
-(7, 'm0005_pembinaan.php', 'up', '2024-06-04 02:36:26'),
-(8, 'm0006_pembinaan_category.php', 'up', '2024-06-04 02:55:32'),
-(9, 'm0007_status_permintaan.php', 'up', '2024-06-04 03:21:22'),
-(10, 'm0006_pembinaan_category.php', 'seed', '2024-06-04 03:21:31'),
-(11, 'm0007_status_permintaan.php', 'seed', '2024-06-04 03:21:31'),
-(12, 'm0008_pembinaan_message.php', 'up', '2024-06-05 07:22:28'),
-(13, 'm0009_email_template.php', 'up', '2024-06-05 07:50:16'),
-(15, 'm0009_email_template.php', 'seed', '2024-06-05 08:15:59'),
-(16, 'm0004_modul_category.php', 'seed', '2024-06-05 08:16:46'),
-(17, 'm0010_dokumentasi_pembinaan.php', 'up', '2024-06-07 10:41:01');
 
 -- --------------------------------------------------------
 
@@ -225,25 +184,6 @@ CREATE TABLE `dbo_modul_literasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Dumping data for table `dbo_modul_literasi`
---
-
-INSERT INTO `dbo_modul_literasi` (`id`, `nama`, `deskripsi`, `kategori`, `link`, `is_active`, `create_by`, `update_by`, `create_at`, `update_at`, `approve_by`, `approve_at`) VALUES
-(1, 'DUMMY MODUL 1', 'Modul ini berisi Metodologi Sensus dan Survei', 1, 'DUMMY_MODUL_1.pdf', 0, 2, 2, 1708932736, 1718173670, NULL, NULL),
-(2, 'DUMMY MODUL 2', 'Modul ini berisi Pengisian dan Evaluasi Metadata Statistik', 1, 'DUMMY_MODUL_2.pdf', 0, 2, 2, 1708932736, 1718640631, NULL, NULL),
-(3, 'DUMMY MODUL 3', 'Modul ini berisi Statistik Sektoral 1 - Sosialisasi 26072023', 1, 'DUMMY_MODUL_3.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(16, 'DUMMY MODUL 16', 'Modul ini berisi Pemanfaatan Data Pendidikan', 2, 'DUMMY_MODUL_16.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(17, 'DUMMY MODUL 17', 'Modul ini berisi Statistik Hortikultura', 2, 'DUMMY_MODUL_17.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(18, 'DUMMY MODUL 18', 'Modul ini berisi Statistik Ketenagakerjaan', 2, 'DUMMY_MODUL_18.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(31, 'DUMMY MODUL 31', 'Modul ini berisi Modul Indikator Konstruksi Triwulanan_Riau', 3, 'DUMMY_MODUL_31.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(32, 'DUMMY MODUL 32', 'Modul ini berisi Kerangka sampel area', 3, 'DUMMY_MODUL_32.pdf', 0, 2, 2, 1708932736, 1718173786, NULL, NULL),
-(34, 'DUMMY MODUL 34', 'Modul ini berisi Statistik Distribusi Ekspor', 4, 'DUMMY_MODUL_34.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(35, 'DUMMY MODUL 35', 'Modul ini berisi Statistik Distribusi Impor', 4, 'DUMMY_MODUL_35.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(36, 'DUMMY MODUL 36', 'Modul ini berisi Statistik Distribusi Perdagangan Dalam Negeri', 4, 'DUMMY_MODUL_36.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `dbo_modul_pembinaan`
 --
 
@@ -261,58 +201,6 @@ CREATE TABLE `dbo_modul_pembinaan` (
   `approve_by` int(11) UNSIGNED DEFAULT NULL,
   `approve_at` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
---
--- Dumping data for table `dbo_modul_pembinaan`
---
-
-INSERT INTO `dbo_modul_pembinaan` (`id`, `nama`, `deskripsi`, `kategori`, `link`, `is_active`, `create_by`, `update_by`, `create_at`, `update_at`, `approve_by`, `approve_at`) VALUES
-(1, 'Metodologi Sensus dan Survei', 'Modul ini berisi Metodologi Sensus dan Survei', 1, '1702348658_e88bec1145b5994d80ad.pdf', 0, 2, 2, 1708932736, 1718173670, NULL, NULL),
-(2, 'Pengisian dan Evaluasi Metadata Statistik', 'Modul ini berisi Pengisian dan Evaluasi Metadata Statistik', 1, '1702880333_37a72a2c14dbb85c67ac.pdf', 0, 2, 2, 1708932736, 1718640631, NULL, NULL),
-(3, 'Statistik Sektoral 1 - Sosialisasi 26072023', 'Modul ini berisi Statistik Sektoral 1 - Sosialisasi 26072023', 1, '1702881087_51677e187ca841657f4f.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(4, 'Statistik Sektoral 3 - Formulir New Romantik', 'Modul ini berisi Statistik Sektoral 3 - Formulir New Romantik', 1, '1702881490_1fe2c15526dc121f065f.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(5, 'Statistik Sektoral 4 - Panduan Aplikasi Romantik (Pengguna)', 'Modul ini berisi Statistik Sektoral 4 - Panduan Aplikasi Romantik (Pengguna)', 1, '1702881728_87feed7a5005a8fe75b3.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(6, 'Statistik Sektoral 5 - Panduan Pemeriksaan Romantik 30052023', 'Modul ini berisi Statistik Sektoral 5 - Panduan Pemeriksaan Romantik 30052023', 1, '1702881790_9a88601f98436493acc8.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(7, 'Statistik Sektoral 6 - Pemeriksaan Metodologi_Romantik', 'Modul ini berisi Statistik Sektoral 6 - Pemeriksaan Metodologi_Romantik', 1, '1702882444_2fd721bf6f7d0c7ac45c.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(8, 'Statistik Sektoral 7 - Sosialisasi Perubahan Aplikasi Romantik', 'Modul ini berisi Statistik Sektoral 7 - Sosialisasi Perubahan Aplikasi Romantik', 1, '1702882459_76c5cfde6c5c22966ebc.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(9, 'Koordinasi Metadata 1 - Metadata Statistik', 'Modul ini berisi Koordinasi Metadata 1 - Metadata Statistik', 1, '1702884236_487f385af7ace62e1981.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(10, 'Koordinasi Metadata 3 - Forum Satu Data Tingkat Daerah', 'Modul ini berisi Koordinasi Metadata 3 - Forum Satu Data Tingkat Daerah', 1, '1702884292_6f429fa2eb1003dfe0b4.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(11, 'Koordinasi Metadata 2- Input Metadata', 'Modul ini berisi Koordinasi Metadata 2- Input Metadata', 1, '1702884412_7df0d5fd878588ca7a21.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(12, 'Koordinasi Metadata 4 - Strategi Penguatan Statistik Sektoral', 'Modul ini berisi Koordinasi Metadata 4 - Strategi Penguatan Statistik Sektoral', 1, '1702884446_65cbfc480f4e51739e2a.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(13, 'Metadata', 'Modul ini berisi Metadata', 1, '1705974774_9f8fd723db4ffb7a82a7.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(14, 'Modul pengumpulan dan pengolahan data', 'Modul ini berisi Modul pengumpulan dan pengolahan data', 1, '1705974982_a7a3e21fc38342dd34d4.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(15, 'Perka BPS No.5 th 2020', 'Modul ini berisi Perka BPS No.5 th 2020', 1, '1705975298_6e7703e78de54a7a05f5.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(16, 'Pemanfaatan Data Pendidikan', 'Modul ini berisi Pemanfaatan Data Pendidikan', 2, '1702365510_95c86d6c53dfc9ab4875.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(17, 'Statistik Hortikultura', 'Modul ini berisi Statistik Hortikultura', 2, '1702366452_289d3f19e8b55e9c3191.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(18, 'Statistik Ketenagakerjaan', 'Modul ini berisi Statistik Ketenagakerjaan', 2, '1702366527_f98b1557d91efa210822.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(19, 'Statistik Kependudukan', 'Modul ini berisi Statistik Kependudukan', 2, '1702366553_0eac2c68589699e01b1d.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(20, 'Pengantar Modal Sosial', 'Modul ini berisi Pengantar Modal Sosial', 2, '1702370171_c1c34197175fc85f6086.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(21, 'Statistik Sektoral 6 - Pemeriksaan Metodologi_Romantik', 'Modul ini berisi Statistik Sektoral 6 - Pemeriksaan Metodologi_Romantik', 2, '1702882083_cbf24646ae1f1a9a1cef.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(22, 'Modul Indeks Kebahagiaan_Riau', 'Modul ini berisi Modul Indeks Kebahagiaan_Riau', 2, '1705563199_609134fc3a270d0ceb75.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(23, 'Modul IPM_Riau', 'Modul ini berisi Modul IPM_Riau', 2, '1705563284_01b03e18f495ee401fe4.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(24, 'Modul Kemiskinan_Riau_compressed', 'Modul ini berisi Modul Kemiskinan_Riau_compressed', 2, '1705563309_472caeb25ad3c54b0e26.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(25, 'Modul Parameter Demografi PROYEKSI PENDUDUK_Riau_compressed', 'Modul ini berisi Modul Parameter Demografi PROYEKSI PENDUDUK_Riau_compressed', 2, '1705563350_beac70b90c58e73cfd12.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(26, 'Modul Parameter Demografi MORTALITAS_rIAU_compressed', 'Modul ini berisi Modul Parameter Demografi MORTALITAS_rIAU_compressed', 2, '1705563383_da667e1919924e2337e6.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(27, 'Modul Parameter Demografi FERTILITAS_Riau_compressed', 'Modul ini berisi Modul Parameter Demografi FERTILITAS_Riau_compressed', 2, '1705563411_8acb4f15ecabfab9e517.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(28, 'Modul Indeks Demokrasi Indonesia', 'Modul ini berisi Modul Indeks Demokrasi Indonesia', 2, '1705563710_dd75ec09e6cf26f95d14.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(31, 'Modul Indikator Konstruksi Triwulanan_Riau', 'Modul ini berisi Modul Indikator Konstruksi Triwulanan_Riau', 3, '1705993763_99f493ddbfe804926189.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(32, 'Kerangka sampel area', 'Modul ini berisi Kerangka sampel area', 3, '1718173786.pdf', 0, 2, 2, 1708932736, 1718173786, NULL, NULL),
-(34, 'Statistik Distribusi Ekspor', 'Modul ini berisi Statistik Distribusi Ekspor', 4, '1702366494_93900220e9d32ac6c875.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(35, 'Statistik Distribusi Impor', 'Modul ini berisi Statistik Distribusi Impor', 4, '1702369774_731fad68087ecba6ce00.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(36, 'Statistik Distribusi Perdagangan Dalam Negeri', 'Modul ini berisi Statistik Distribusi Perdagangan Dalam Negeri', 4, '1702370104_1be2a628e6c7e5c3c569.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(37, 'Statistik Distribusi Transportasi', 'Modul ini berisi Statistik Distribusi Transportasi', 4, '1702371354_9501ad17bf2d0394d4e6.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(38, 'Modul PDRB_Riau', 'Modul ini berisi Modul PDRB_Riau', 4, '1705974134_79bc55ccb3ed2a955a69.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(39, 'Pertumbuhan Ekonomi', 'Modul ini berisi Pertumbuhan Ekonomi', 4, '1705974382_319ff957395f98294084.pdf', 0, 2, NULL, 1708932736, 1717406508, NULL, NULL),
-(47, 'DUMMY MODUL 47', 'Modul ini berisi Metodologi Sensus dan Survei', 5, 'DUMMY_MODUL_47.pdf', 0, 2, 2, 1708932736, 1718173670, NULL, NULL),
-(48, 'DUMMY MODUL 48', 'Modul ini berisi Pengisian dan Evaluasi Metadata Statistik', 5, 'DUMMY_MODUL_48.pdf', 0, 2, 2, 1708932736, 1718640631, NULL, NULL),
-(49, 'DUMMY MODUL 49', 'Modul ini berisi Statistik Sektoral 1 - Sosialisasi 26072023', 5, 'DUMMY_MODUL_49.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(50, 'DUMMY MODUL 50', 'Modul ini berisi Pemanfaatan Data Pendidikan', 6, 'DUMMY_MODUL_50.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(51, 'DUMMY MODUL 51', 'Modul ini berisi Statistik Hortikultura', 6, 'DUMMY_MODUL_51.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(52, 'DUMMY MODUL 52', 'Modul ini berisi Statistik Ketenagakerjaan', 6, 'DUMMY_MODUL_52.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(53, 'DUMMY MODUL 53', 'Modul ini berisi Modul Indikator Konstruksi Triwulanan_Riau', 7, 'DUMMY_MODUL_53.pdf', 0, 2, NULL, 1708932736, NULL, NULL, NULL),
-(54, 'DUMMY MODUL 54', 'Modul ini berisi Kerangka sampel area', 7, 'DUMMY_MODUL_54.pdf', 0, 2, 2, 1708932736, 1718173786, NULL, NULL);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `dbo_permintaan`
@@ -338,15 +226,6 @@ CREATE TABLE `dbo_permintaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Dumping data for table `dbo_permintaan`
---
-
-INSERT INTO `dbo_permintaan` (`id`, `produsen_data`, `deskripsi`, `model_pembinaan`, `tanggal`, `waktu`, `lokasi`, `surat`, `email_pic`, `nama_pic`, `hp_pic`, `status`, `create_by`, `update_by`, `create_at`, `update_at`) VALUES
-(10, 1, 'Penjelasan kualitas data statistik', 1, '2024-07-13', '20:51:00', 'Zoom meeting', '1720533259.pdf', 'dadangsunandar@gmail.com', 'dadang sunandar', '08128797689879', 3, 1, NULL, 1720533259, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `dbo_pesan_permintaan`
 --
 
@@ -357,15 +236,6 @@ CREATE TABLE `dbo_pesan_permintaan` (
   `user_id` int(11) UNSIGNED NOT NULL,
   `pesan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
---
--- Dumping data for table `dbo_pesan_permintaan`
---
-
-INSERT INTO `dbo_pesan_permintaan` (`id`, `permintaan_id`, `waktu`, `user_id`, `pesan`) VALUES
-(19, 10, 1722877322, 2, 'tes');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `dbo_status_permintaan`
@@ -437,21 +307,6 @@ CREATE TABLE `dbo_testimoni` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Dumping data for table `dbo_testimoni`
---
-
-INSERT INTO `dbo_testimoni` (`id`, `pesan`, `rating`, `is_active`, `create_at`, `update_at`, `create_by`, `update_by`) VALUES
-(1, 'Our members are so impressed. It\'s intuitive. It\'s clean. It\'s distraction free. If you\'re building a community.', 5, 1, 1708933715, NULL, 1, NULL),
-(2, 'Spektral is exactly what I\'ve been looking for.', 4, 1, 1708933715, NULL, 1, NULL),
-(3, 'Spektral makes me more productive and gets the job done in a fraction of the time. I\'m glad I found spektral.', 5, 1, 1708933715, 1718070728, 1, NULL),
-(4, 'I can\'t say enough about Spektral. Spektral has really helped our business.', 4, 1, 1708933715, NULL, 1, NULL),
-(8, 'coba', 5, 1, 1718628947, NULL, 2, NULL),
-(10, 'Terima kasih', 4, 1, 1720532967, NULL, 23, NULL),
-(11, 'good', 5, 1, 1722570873, NULL, 1, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `dbo_tingkat_instansi`
 --
 
@@ -497,24 +352,6 @@ CREATE TABLE `dbo_user` (
   `update_at` int(11) UNSIGNED DEFAULT NULL,
   `update_by` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
---
--- Dumping data for table `dbo_user`
---
-
-INSERT INTO `dbo_user` (`id`, `email`, `password`, `nama`, `nip`, `jabatan`, `instansi`, `tingkat`, `nomor_wa`, `role`, `token`, `reset_token`, `is_active`, `create_at`, `update_at`, `update_by`) VALUES
-(1, 'user@example.com', '$2y$10$Si0VQuuecfQZ8iUx6/gPKePPdRgwRu7GzEJzfcuwF0NajnK4PTNyK', 'User', '123456789012345678', 'Fungsional Ahli Muda', 'Dinas XXXY', 2, '12345678911', 'user', NULL, NULL, 1, 1707714506, 1723325584, 1),
-(2, 'khaerulanas@bps.go.id', '$2y$10$aQTRt124wCdvlWfw5.DzA./.Ivn/IauOdOnGnJt2vmQnC/9SWdLKO', 'Khaerul Anas', '198510272009021002', 'Prakom Ahli Muda', 'BPS Provinsi Riau', 2, '085325843834', 'user,operator,supervisor,viewer,admin', NULL, NULL, 1, 1707714506, 1723325560, NULL),
-(14, 'dadangsunandar@bps.go.id', NULL, 'Dadang Sunandar SST, M.T', '198311082007011004', 'Pranata Komputer Ahli Muda BPS Provinsi', 'BPS Provinsi Riau', 2, '12345678910', 'user,operator,supervisor,viewer,admin', NULL, NULL, 1, 1718241332, 1723326422, NULL),
-(23, 'dadangsunandar@gmail.com', '$2y$10$MBWMDjASf7eFmZrprQ4kpuYvP2Pvvbqa0IKXnX1boeEIZfhd7X892', 'dadang sunandar', '198311082007011004', 'Kabid', 'OPD', 2, '08128779087622', 'user', NULL, NULL, 1, 1720532818, 1722852894, NULL),
-(24, 'emiliad@bps.go.id', NULL, 'Emilia Dharmayanthi SST, M.Si.', '197905132000122002', 'Statistisi Ahli Madya BPS Provinsi', 'BPS Provinsi Riau', 2, '12345678910', 'user,operator,supervisor,viewer,admin', NULL, NULL, 1, 1721697451, 1723326429, NULL),
-(25, 'bekti.indasari@bps.go.id', NULL, 'Bekti Indasari S.Stat.', '199603052019032001', 'Statistisi Ahli Pertama BPS Provinsi', 'BPS Provinsi Riau', 2, '12345678910', 'user,operator', NULL, NULL, 1, 1721698740, 1723326455, NULL),
-(26, 'asep.riyadi@bps.go.id', NULL, 'Asep Riyadi S.Si., M.M', '196701181989011001', 'Kepala BPS Provinsi', 'BPS Provinsi Riau', 2, '12345678910', 'user,viewer', NULL, NULL, 1, 1721785555, NULL, NULL),
-(27, 'gumilar@bps.go.id', NULL, 'Agung Gumilar Triyanto SST, M.Si.', '197711071999121001', 'Pranata Komputer Ahli Madya BPS Provinsi', 'BPS Provinsi Riau', 2, '12345678910', 'user,viewer', NULL, NULL, 1, 1721787483, NULL, NULL);
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `dbo_dokumentasi_pembinaan`
