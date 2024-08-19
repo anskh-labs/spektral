@@ -1,0 +1,31 @@
+<?= $this->render('frontend/components/titlebox') ?>
+<div class="container mb-5">
+    <ul class="nav nav-tabs mb-3">
+        <?php
+        foreach ($data as $row) { ?>
+            <li class="nav-item">
+                <?php if ($step == $row['id']) { ?>
+                    <a class="nav-link active" aria-current="page"><?= $row['tahapan'] ?></a>
+                <?php } else { ?>
+                    <a class="nav-link" href="<?= route(App\Enums\ResourceEnum::GSBPM, '/' . strval($row['id'])) ?>"><?= $row['tahapan'] ?></a>
+                <?php } ?>
+            </li>
+        <?php } ?>
+    </ul>
+    <div class="row">
+        <div class="col-lg-12">
+            <?= $data[$step]['isi'] ?>
+            <?php if ($data[$step]['gambar']) { ?>
+                <img class="w-100" src="<?= site_url(app_config(App\Enums\PathEnum::MODUL_GSBPM)  . '/' . $data[$step]['gambar']) ?>">
+            <?php
+            }
+            if ($data[$step]['link']) { ?>
+                <p class="mt-4 ms-3"><a href="<?= site_url(app_config(App\Enums\PathEnum::MODUL_GSBPM)  . '/' . $data[$step]['link']) ?>" class="btn btn-success rounded-pill py-1 px-3 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                        </svg> Unduh</a>
+                </p>
+            <?php } ?>
+        </div>
+    </div>
+</div>

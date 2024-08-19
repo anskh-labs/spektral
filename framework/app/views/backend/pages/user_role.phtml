@@ -1,0 +1,36 @@
+<?= $this->render('frontend/components/titlebox') ?>
+<div class="container mb-5">
+    <div class="table-responsive mb-3">
+        <table id="myTable" class="table table-bordered table-striped table-hover" style="width:100%">
+            <thead class="table-light">
+                <th class="text-center">No.</th>
+                <th class="text-center">Role</th>
+                <th class="text-center">Permission</th>
+            </thead>
+            <tbody>
+                <?php
+                $no = 1;
+                if ($data && is_array($data)) {
+                    foreach ($data as $role => $permissions) {
+                        $permissionText = '';
+                        foreach ($permissions as $permission) {
+                            $permissionText .= Faster\Helper\Html::tag('span', App\Enums\ResourceEnum::keyOf($permission), ['class' => 'badge bg-secondary']);
+                        }
+                ?>
+
+                        <tr>
+                            <td width="auto" class="text-center"><?= $no++ ?></td>
+                            <td width="auto"><?= $role ?></td>
+                            <td width="auto"><?= $permissionText ?></td>
+                        </tr>
+                <?php }
+                }else{?>
+                <tr><td colspan="3">-- NO DATA --</td></tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="<?= route(App\Enums\ResourceEnum::ADMIN_USER_LIST) ?>" class="btn btn-secondary rounded-pill py-1 px-3">Kembali</a>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<?= $this->render('frontend/components/titlebox') ?>
+<div class="container mb-5">
+    <ul class="nav nav-tabs mb-3">
+        <?php
+        foreach ($data as $row) { ?>
+            <li class="nav-item">
+                <?php if ($step == $row['id']) { ?>
+                    <a class="nav-link active" aria-current="page"><?= $row['tahapan'] ?></a>
+                <?php } else { ?>
+                    <a class="nav-link" href="<?= route(App\Enums\ResourceEnum::ADMIN_MODUL_GSBPM_LIST, '/' . strval($row['id'])) ?>"><?= $row['tahapan'] ?></a>
+                <?php } ?>
+            </li>
+        <?php } ?>
+    </ul>
+    <div class="card">
+        <div class="card-header text-center">
+            <span class="text-dark fs-4">DATA</span>
+        </div>
+        <div class="card-body">
+            <div class="row mb-2">
+                <span class="text-muted">Isi</span>
+                <div><?= $data[$step]['isi'] ?></div>
+            </div>
+            <div class="row mb-2">
+                <?php if ($data[$step]['gambar']) { ?>
+                    <span class="text-muted">File Gambar :
+                            <a class="ms-2" target="_blank" href="<?= site_url(app_config(App\Enums\PathEnum::MODUL_GSBPM)  . '/' . $data[$step]['gambar']) ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path transform="rotate(0,8,8) translate(2.38418749631819E-06,0) scale(0.500000357628124,0.500000357628124)" d="M9.5999776,12.699997L11.899997,15.099998 13.299991,14.300003 19.000005,20 22.899999,18 28.299995,20.699997 28.299995,25.699997 3.5999767,25.699997 3.5999767,18.599998z M20.500005,11.699997L21.199987,11.699997 21.000005,12.800003 20.699987,12.800003z M23.09998,10.699997L23.799993,11.599998 23.59998,11.800003 22.699987,11.099998z M18.699987,10.699997L19.199987,11.199997 18.299993,11.900002 18.000005,11.599998z M23.59998,8.5999985L24.699987,8.8000031 24.699987,9 23.59998,9.1999969z M18.09998,8.5999985L18.09998,9.3000031 17.000005,9 17.000005,8.8000031z M20.799993,7C21.899999,7 22.699987,7.9000015 22.699987,8.9000015 22.699987,10 21.799993,10.800003 20.799993,10.800003 19.699987,10.800003 18.899999,9.9000015 18.899999,8.9000015 18.899999,7.8000031 19.799993,7 20.799993,7z M23.500005,6.0999985L23.699987,6.3000031 23.000005,7.1999969 22.500005,6.6999969z M18.199987,6.0999985L19.09998,6.8000031 18.59998,7.3000031 18.000005,6.3000031z M20.699987,5L21.000005,5 21.199987,6.0999985 20.500005,6.0999985z M2.1999823,2.4000015L2.1999823,26.800003 29.400001,26.800003 29.400001,2.4000015z M0,0L31.900001,0 31.900001,32 0,32z" />
+                                </svg></a></span>
+                <?php }else{ ?>
+                    <span class="text-muted">File Gambar : -</span>
+                <?php } ?>
+            </div>
+            <div class="row mb-2">
+                <?php if ($data[$step]['link']) { ?>
+                    <span class="text-muted">File PDF :
+                            <a class="ms-2" target="_blank" href="<?= site_url(app_config(App\Enums\PathEnum::MODUL_GSBPM)  . '/' . $data[$step]['link']) ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path transform="rotate(0,8,8) translate(2.38418749631819E-06,0) scale(0.500000357628124,0.500000357628124)" d="M15.199951,5.7999878L21.5,5.7999878 21.5,32 3.5,32C8.3999634,30.100006,14.599976,27,15,24.100006L15,23.899994 15.199951,23.899994z M0,5.7999878L0.099975586,5.7999878 4.5999756,5.7999878 4.6999512,19.399994C4.6999512,19.399994 10.599976,21 11,23.799988 11.399963,26.299988 4.5999756,29 0,30.100006z M6.8999634,0C10.5,0.70001221,12.699951,3.6000061,13.099976,4.2000122L13.099976,22.5C12,18.100006,7,17.899994,7,17.899994z" />
+                                </svg></a></span>
+                <?php }else{ ?>
+                    <span class="text-muted">File PDF : -</span>
+                <?php } ?>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="d-flex justify-content-center">
+                <a href="<?= route(App\Enums\ResourceEnum::ADMIN_MODUL_GSBPM_EDIT, strval($step)) ?>" class="btn btn-primary rounded-pill py-2 px-5 me-2">Ubah</a>
+            </div>
+        </div>
+    </div>
+</div>

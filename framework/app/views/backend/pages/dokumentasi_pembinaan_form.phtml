@@ -1,0 +1,71 @@
+<?= $this->render('frontend/components/titlebox') ?>
+<div class="container mb-5">
+    <div class="card">
+        <?php
+        $form = form($model); ?>
+        <?= $form->begin($model->isEdit() ? route(App\Enums\ResourceEnum::ADMIN_DOKUMENTASI_EDIT, strval($id)) : route(App\Enums\ResourceEnum::ADMIN_DOKUMENTASI_ENTRY), Faster\Component\Enums\HttpMethodEnum::POST, ['enctype' => 'multipart/form-data', 'class' => 'needs-validation', 'autocomplete' => 'off']) ?>
+        <div class="card-header bg-white text-center">
+            <span class="text-dark fs-4">FORMULIR</span>
+        </div>
+        <div class="card-body bg-white">
+            <?php if ($model->permintaan_id) { ?>
+                <div class="row mb-2">
+                    <div class="col">
+                        <label for="id_permintaan_id" class="form-label text-muted"><?= $model->getLabel('permintaan_id') ?></label>
+                        <?= $form->field('permintaan_id', ['class' => 'form-control', 'readonly', 'autofocus', 'id' => 'id_permintaan_id']) ?>
+                    </div>
+                </div>
+            <?php } ?>
+            <div class="row mb-2">
+                <div class="col">
+                    <label for="id_judul" class="form-label text-muted"><?= $model->getLabel('judul') ?><span class="text-danger">*</span></label>
+                    <?= $form->field('judul', ['class' => 'form-control', 'required', 'autofocus', 'id' => 'id_judul']) ?>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <label for="id_berita" class="form-label text-muted"><?= $model->getLabel('berita') ?><span class="text-danger">*</span></label>
+                    <?= $form->textArea('berita', ['class' => 'form-control', 'required', 'id' => 'id_berita', 'style' => 'height: 300px;']) ?>
+                </div>
+            </div>
+            <div class="form-text mb-2">Silahkan gunakan atribute html untuk pengaturan baris dan/atau huruf. Contoh <?= esc('<br> untuk ganti baris, <b> untuk cetak tebal, dan <em> untuk cetak miring.') ?></div>
+            <div class="row mb-2">
+                <div class="col-lg-6">
+                    <label for="id_tanggal" class="form-label text-muted"><?= $model->getLabel('tanggal') ?><span class="text-danger">*</span></label>
+                    <?= $form->field('tanggal', ['class' => 'form-control', 'required', 'id' => 'id_tanggal'])->dateField() ?>
+                </div>
+                <?php if ($model->isEdit() && auth()->hasPermission(App\Enums\ResourceEnum::ADMIN_DOKUMENTASI_APPROVE)) { ?>
+                    <div class="col-lg-6">
+                        <span class="text-muted"><?= $model->getLabel('is_active') ?><span class="text-danger">*</span></span>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="id_is_active" name="is_active" <?= $model->is_active == 1 ? 'value="1" checked' : '' ?>>
+                            <label class="form-check-label" for="id_is_active">Aktif</label>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <label class="form-label text-muted" for="Gambar"><?= $model->getLabel('Gambar') ?></label>
+                    <?= $form->file('Gambar', ['class' => 'form-control', 'accept' => ['image/png,', 'image/gif,', 'image/jpeg']]) ?>
+                    <div class="form-text">File gambar yang diperkenankan adalah format png, jpg, dan gif.</div>
+                </div>
+            </div>
+            <?php if ($model->isEdit() && $model->gambar) { ?>
+                <div class="row mb-2">
+                    <div class="col col-lg-8">
+                        <img style="width: 100%;" class="img-thumbnail" src="<?= site_url(app_config(App\Enums\PathEnum::IMAGE_DOKUMENTASI_PEMBINAAN) . '/' . $model->gambar) ?>">
+                    </div>
+                </div>
+            <?php } ?>
+            <div class="form-text">Keterangan: <span class="text-danger">*</span> Wajib diisi.</div>
+        </div>
+        <div class="card-footer">
+            <div class="d-flex justify-content-center">
+                <a href="<?= route(App\Enums\ResourceEnum::ADMIN_DOKUMENTASI_LIST) ?>" class="btn btn-secondary rounded-pill py-2 px-5 me-2">Kembali</a>
+                <input class="btn btn-primary rounded-pill py-2 px-5" type="submit" name="submit" value="Simpan" />
+            </div>
+        </div>
+        <?= $form->end() ?>
+    </div>
+</div>

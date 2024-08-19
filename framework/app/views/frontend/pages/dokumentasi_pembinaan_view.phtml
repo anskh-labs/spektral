@@ -1,0 +1,17 @@
+<?= $this->render('frontend/components/titlebox') ?>
+<div class="container mb-5">
+    <h3 class="text-primary"><?= $row['judul'] ?></h3>
+    <p class="text-muted mb-2"><?= $row['nama'] ?>, <?= $row['tanggal'] ?></p>
+    <div class="row">
+        <div class="col justify-content-between">
+            <?= $row['gambar'] ? '<img style="width:40%" class="img-thumbnail float-start mb-3 me-3" src="' .site_url(app_config(App\Enums\PathEnum::IMAGE_DOKUMENTASI_PEMBINAAN) . '/' . $row['gambar']) . '">' : '' ?>
+            <p style="text-align: justify;"> <?= $row['berita'] ?></p>
+        </div>
+    </div>
+    <hr class="my-2" style="border: 1px solid silver;" />
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <a href="<?= route(App\Enums\ResourceEnum::DOKUMENTASI_PEMBINAAN_LIST) ?>" class="btn btn-secondary rounded-pill py-2 px-5">Kembali</a>
+        </div>
+    </div>
+</div>

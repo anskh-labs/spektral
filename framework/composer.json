@@ -1,0 +1,40 @@
+{
+  "name": "anskh-labs/spektral",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "files": [
+      "app/functions.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Khaerul Anas",
+      "email": "khaerulanas@live.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "irsadarief/jkd-sso": "^1.6",
+    "phpmailer/phpmailer": "^6.9",
+    "anskh-labs/faster": "^1.0",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "scripts": {
+    "post-update-cmd": "composer dump-autoload",
+    "db:migrate": [
+      "php -f migrations.php up",
+      "php -f migrations.php seed"
+    ],
+    "db:up": "php -f migrations.php up",
+    "db:seed": "php -f migrations.php seed",
+    "db:down": "php -f migrations.php down"
+  },
+  "config": {
+    "platform": {
+      "php": "8.2.0"
+    }
+  }
+}

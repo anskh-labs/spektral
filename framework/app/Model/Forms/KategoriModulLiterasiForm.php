@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Model\Forms;
+
+use Faster\Component\Enums\DataTypeEnum;
+use Faster\Component\Enums\RuleEnum;
+use Faster\Model\FormModel;
+
+class KategoriModulLiterasiForm extends FormModel
+{
+    public function __construct(bool $isEdit = false)
+    {
+        parent::__construct('formKategoriModulLiterasi', $isEdit ? 'nama' : 'id', $isEdit);
+        $this->addProperty('id', DataTypeEnum::INT, [RuleEnum::REQUIRED, RuleEnum::NUMERIC], 'Id Kategori');
+        $this->addProperty('nama', DataTypeEnum::STRING, [RuleEnum::MIN_LENGTH, 3], 'Nama Kategori');
+        $this->addProperty('deskripsi', DataTypeEnum::STRING, [RuleEnum::MIN_LENGTH, 20], 'Deskripsi Kategori');
+    }
+}

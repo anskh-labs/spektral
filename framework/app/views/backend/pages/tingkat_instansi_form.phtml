@@ -1,0 +1,37 @@
+<?= $this->render('frontend/components/titlebox') ?>
+<div class="container mb-5">
+    <div class="card col-lg-12">
+        <?php
+        $form = form($model); ?>
+        <?= $form->begin($model->isEdit() ? route(App\Enums\ResourceEnum::ADMIN_TINGKAT_INSTANSI_EDIT, strval($row['id'])) : route(App\Enums\ResourceEnum::ADMIN_TINGKAT_INSTANSI_ENTRY), Faster\Component\Enums\HttpMethodEnum::POST, ['class' => 'needs-validation', 'autocomplete' => 'off']) ?>
+        <div class="card-header bg-white text-center">
+            <span class="text-dark fs-4">FORMULIR</span>
+        </div>
+        <div class="card-body bg-white">
+            <div class="row mb-2">
+                <div class="col-lg-3 form-group">
+                    <label for="id_kategori" class="form-label text-muted"><?= $model->getLabel('id') ?><span class="text-danger">*</span></label>
+                    <?php if($model->isEdit()){ ?>
+                        <div><?= $row['id'] ?></div>
+                    <?php }else{ ?>
+                        <?= $form->field('id', ['class' => 'form-control', 'required', 'id' => 'id_kategori']) ?>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="form-group">
+                    <label for="id_nama" class="form-label text-muted"><?= $model->getLabel('nama') ?><span class="text-danger">*</span></label>
+                    <?= $form->field('nama', ['class' => 'form-control', 'required', 'id' => 'id_nama']) ?>
+                </div>
+            </div>
+            <div class="form-text">Keterangan: <span class="text-danger">*</span> Wajib diisi.</div>
+        </div>
+        <div class="card-footer bg-white">
+            <div class="d-flex justify-content-center">
+                <a href="<?= route(App\Enums\ResourceEnum::ADMIN_TINGKAT_INSTANSI_LIST) ?>" class="btn btn-secondary rounded-pill py-2 px-5 me-2">Kembali</a>
+                <input class="btn btn-primary rounded-pill py-2 px-5" type="submit" name="submit" value="Simpan" />
+            </div>
+        </div>
+        <?= $form->end() ?>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-meta fixed-top">
+    <div class="container">
+        <span class="pt-1 me-5"><img src="<?= base_path('/img/logo.png') ?>" width="40px" alt=""> <span class="bps-brand text-uppercase">SPEKTRAL</span></span>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#w0-collapse" aria-controls="w0-collapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div id="w0-collapse" class="collapse navbar-collapse">
+            <ul id="w1" class="navbar-nav me-auto mb-2 mb-lg-0 nav">
+                <li class="nav-item"><a class="nav-link<?= is_menu_home() ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::HOME) ?>">BERANDA</a></li>
+                <li class="dropdown nav-item"><a class="dropdown-toggle nav-link<?= is_menu_modul() ? ' active' : '' ?>" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">MODUL</a>
+                    <div id="w2" class="dropdown-menu">
+                        <a class="dropdown-item<?= is_route(App\Enums\ResourceEnum::GSBPM) ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::GSBPM) ?>">G S B P M</a>
+                        <a class="dropdown-item<?= is_route(App\Enums\ResourceEnum::MODUL_PEMBINAAN_LIST) ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::MODUL_PEMBINAAN_LIST) ?>">PEMBINAAN STATISTIK</a>
+                        <a class="dropdown-item<?= is_route(App\Enums\ResourceEnum::MODUL_LITERASI_LIST) ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::MODUL_LITERASI_LIST) ?>">LITERASI STATISTIK</a>
+                    </div>
+                </li>
+                <li class="dropdown nav-item"><a class="dropdown-toggle nav-link<?= is_menu_layanan_instansi() ? ' active' : '' ?>" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">LAYANAN INSTANSI</a>
+                    <div id="w3" class="dropdown-menu">
+                        <a class="dropdown-item<?= is_menu_permintaan_pembinaan() ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::PERMINTAAN_PEMBINAAN_LIST) ?>">PERMINTAAN PEMBINAAN STATISTIK</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item<?= is_route(App\Enums\ResourceEnum::ROMANTIK) ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::ROMANTIK) ?>">PENGAJUAN REKOMENDASI STATISTIK</a>
+                        <a class="dropdown-item<?= is_route(App\Enums\ResourceEnum::METADATA) ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::METADATA) ?>">PELAPORAN METADATA STATISTIK</a>
+                    </div>
+                </li>
+                <li class="dropdown nav-item"><a class="dropdown-toggle nav-link<?= is_menu_dokumentasi() ? ' active' : '' ?>" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">DOKUMENTASI</a>
+                    <div id="w4" class="dropdown-menu">
+                        <a class="dropdown-item<?= is_menu_dokumentasi_pembinaan() ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::DOKUMENTASI_PEMBINAAN_LIST) ?>">PEMBINAAN STATISTIK</a>
+                        <a class="dropdown-item<?= is_route(App\Enums\ResourceEnum::TESTIMONI) ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::TESTIMONI) ?>">TESTIMONI</a>
+                    </div>
+                </li>
+                <?php if (auth()->isGuest()) { ?>
+                    <li class="nav-item"><a class="btn btn-outline-success rounded-pill px-3 ms-2" href="<?= auth()->getProvider()->getLoginUri() ?>">LOGIN</a></li>
+                <?php } else { ?>
+                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link<?= is_menu_profil() ? ' active' : '' ?>" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">PROFIL</a>
+                        <div id="w5" class="dropdown-menu">
+                            <?php if (is_internal(auth()->getIdentity()->getData())) { ?>
+                                <a class="dropdown-item" href="<?= route(App\Enums\ResourceEnum::DASHBOARD) ?>">HALAMAN BACKEND</a>
+                            <?php } else { ?>
+                                <a class="dropdown-item<?= is_route(App\Enums\ResourceEnum::USER_INFO) ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::USER_INFO) ?>">INFORMASI</a>
+                                <a class="dropdown-item<?= is_route(App\Enums\ResourceEnum::USER_UPDATE) ? ' active' : '' ?>" href="<?= route(App\Enums\ResourceEnum::USER_UPDATE) ?>">UBAH DATA</a>
+                            <?php } ?>
+                            <hr class="dropdown-divider">
+                            </hr>
+                            <a class="dropdown-item" href="<?= auth()->getProvider()->getLogoutUri() ?>">LOGOUT</a>
+                        </div>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+</nav>

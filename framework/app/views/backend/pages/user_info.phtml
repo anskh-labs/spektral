@@ -1,0 +1,63 @@
+<?= $this->render('frontend/components/titlebox') ?>
+<div class="container mb-5">
+    <div class="card col-12">
+        <div class="card-body bg-white">
+            <div class="row mb-2">
+                <div class="col-lg-6">
+                    <span class="text-muted"><?= $model->getLabel('nama') ?></span>
+                    <div><?= $row['nama'] ?></div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-muted"><?= $model->getLabel('nip') ?></span>
+                    <div><?= $row['nip'] ?></div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-lg-6">
+                    <span class="text-muted"><?= $model->getLabel('email') ?></span>
+                    <div><?= $row['email'] ?></div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-muted"><?= $model->getLabel('nomor_wa') ?></span>
+                    <div><?= $row['nomor_wa'] ?></div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-lg-6">
+                    <span class="text-muted"><?= $model->getLabel('instansi') ?></span>
+                    <div><?= $row['instansi'] ?></div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-muted"><?= $model->getLabel('tingkat') ?></span>
+                    <div><?= $row['tingkat_instansi'] ?></div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-lg-6">
+                    <span class="text-muted"><?= $model->getLabel('jabatan') ?></span>
+                    <div><?= $row['jabatan'] ?></div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-muted">Jenis Akun</span>
+                    <div><?= is_internal($row['email']) ? 'Internal' : 'Eksternal' ?></div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-lg-6">
+                    <span class="text-muted">Status</span>
+                    <div><?= $row['is_active'] == 1 ? 'Aktif' : 'Tidak Aktif' ?></div>
+                </div>
+                <?php
+                $roles = explode(',', $row['role']);
+                $roleText = '';
+                foreach ($roles as $role) {
+                    $roleText .= Faster\Helper\Html::tag('span', $role, ['class' => 'badge bg-secondary']);
+                } ?>
+                <div class="col-lg-6">
+                    <span class="text-muted">Role</span>
+                    <div><?= $roleText ?></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

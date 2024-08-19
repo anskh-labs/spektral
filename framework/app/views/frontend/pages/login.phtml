@@ -1,0 +1,46 @@
+<?= $this->render('frontend/components/titlebox') ?>
+<div class="container mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-4 col-md-6">
+            <div>
+                <?php $form = form($model); ?>
+                <?= $form->begin(current_path(), Faster\Component\Enums\HttpMethodEnum::POST, ['class' => 'needs-validation', 'autocomplete' => 'off']) ?>
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label for="id_email" class="form-label text-muted"><?= $model->getLabel('email') ?><span class="text-danger">*</span></label>
+                        <?= $form->field('email', ['class' => 'form-control', 'required', 'autofocus', 'id' => 'id_email'])->emailField() ?>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label for="id_password" class="form-label text-muted"><?= $model->getLabel('password') ?><span class="text-danger">*</span></label>
+                        <?= $form->field('password', ['class' => 'form-control', 'required', 'id' => 'id_password'])->passField() ?>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label for="id_captcha" class="form-label text-muted"><?= $model->getLabel('captcha') ?><span class="text-danger">*</span></label>
+                        <?= $form->captcha() ?>
+                        <?= $form->field('captcha', ['class' => 'form-control', 'required', 'id' => 'id_captcha']) ?>
+                    </div>
+                </div>
+
+                <div class="form-text mb-5">Keterangan: <span class="text-danger">*</span> Wajib diisi.</div>
+                
+                <div class="mb-5 text-center">
+                    <input class="btn btn-primary rounded-pill py-2 px-5" type="submit" name="submit" value="Login" />
+                </div>
+                <?= $form->end() ?>
+                <div class="row mb-2">
+                    <span class="text-muted">Lupa password? <a class="btn btn-outline-success rounded-pill px-3 ms-2" href="<?= route(App\Enums\ResourceEnum::RESET_PASSWORD) ?>">Reset</a></span>
+                </div>
+                <div class="row mb-2">
+                    <span class="text-muted">Belum punya akun?<a class="btn btn-outline-success rounded-pill px-3 ms-2" href="<?= route(App\Enums\ResourceEnum::REGISTER) ?>">Daftar</a></span>
+                </div>
+                <div class="row">
+                    <span class="text-muted">Pengguna internal? <a class="btn btn-outline-success rounded-pill px-3 ms-2" href="<?= route(App\Enums\ResourceEnum::LOGIN_SSO) ?>">Login SSO</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
