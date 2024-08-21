@@ -47,10 +47,9 @@ class ModulLiterasiModel extends DbModel
     {
         return static::db($db)->getTable('modul_literasi');
     }
-    public static function rekapAktif(Database|null $db = null):array
+    public static function rekapByKategori(Database|null $db = null): array
     {
-        $table = static::table($db);
-        $stm = static::db($db)->query("SELECT COUNT(CASE WHEN P.`is_active`=1 THEN 1 ELSE NULL END) AS `aktif`,COUNT(CASE WHEN P.`is_active`=0 THEN 1 ELSE NULL END) AS `tidak_aktif` FROM  $table P GROUP BY P.is_active;");
-        return $stm->fetch(PDO::FETCH_ASSOC);
+        $stm = static::db($db)->query("SELECT a.kategori,b.nama,SUM(CASE WHEN a.is_active=1 THEN 1 ELSE 0 END) AS `aktif`,SUM(CASE WHEN a.is_active=0 THEN 1 ELSE 0 END) AS `tidak_aktif` FROM dbo_modul_pembinaan a left join dbo_kategori_modul_pembinaan b on a.kategori=b.id GROUP BY a.kategori ORDER BY a.kategori;");
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 }

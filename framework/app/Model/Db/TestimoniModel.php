@@ -5,6 +5,7 @@ namespace App\Model\Db;
 use Faster\Component\Enums\DataTypeEnum;
 use Faster\Db\Database;
 use Faster\Model\DbModel;
+use PDO;
 
 /**
  * TestimoniModel
@@ -40,5 +41,11 @@ class TestimoniModel extends DbModel
     public static function table(Database|null $db = null): string
     {
         return static::db($db)->getTable('testimoni');
+    }
+    public static function rekapAktif(Database|null $db = null):array
+    {
+        $table = static::table($db);
+        $stm = static::db($db)->query("SELECT COUNT(CASE WHEN P.`is_active`=1 THEN 1 ELSE NULL END) AS `aktif`,COUNT(CASE WHEN P.`is_active`=0 THEN 1 ELSE NULL END) AS `tidak_aktif` FROM  $table P GROUP BY P.is_active;");
+        return $stm->fetch(PDO::FETCH_ASSOC);
     }
 }

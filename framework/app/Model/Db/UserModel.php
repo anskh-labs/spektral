@@ -62,10 +62,10 @@ class UserModel extends DbModel
     {
         return static::findColumn('`email`', "`role` LIKE '%{$role}%'");
     }
-    public static function rekapAktif(Database|null $db = null):array
+    public static function rekapbyKategori(Database|null $db = null):array
     {
         $table = static::table($db);
-        $stm = static::db($db)->query("SELECT COUNT( CASE WHEN P.`is_active`=1 THEN 1 ELSE NULL END ) AS `aktif`, COUNT( CASE WHEN P.`is_active`=0 THEN 1 ELSE NULL END ) AS `tidak_aktif` FROM $table P GROUP BY P.is_active");
-        return $stm->fetch(PDO::FETCH_ASSOC);
+        $stm = static::db($db)->query("SELECT P.`kategori`, SUM(P.`aktif`) AS `aktif`,SUM(P.`tidak_aktif`) AS `tidak_aktif` FROM(SELECT CASE WHEN LOCATE('@bps.go.id', `email`)>0 THEN 'Internal' ELSE 'Eksternal' END AS `kategori`, CASE `is_active` WHEN 1 THEN 1 ELSE 0 END AS `aktif`, CASE `is_active` WHEN 0 THEN 1 ELSE 0 END AS `tidak_aktif` FROM $table) P GROUP BY P.`kategori`;");
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 }

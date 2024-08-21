@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Handler\Frontend;
 
 use App\Enums\ResourceEnum;
+use App\Enums\RoleEnum;
 use App\Handler\ActionHandler;
 use App\Model\Forms\LoginForm;
 use App\Model\Forms\RegisterForm;
@@ -67,7 +68,7 @@ class AuthHandler extends ActionHandler
                             session()->addFlashSuccess("Selamat datang '" . ucfirst($row['nama'] . "'"));
 
                             $query = $request->getQueryParams();
-                            if($query['redirect_uri'] ?? null){
+                            if(isset($query['redirect_uri']) &&  $query['redirect_uri']){
                                 $redirect_uri = $query['redirect_uri'];
                                 return redirect_uri($redirect_uri);
                             }else{
@@ -334,9 +335,8 @@ class AuthHandler extends ActionHandler
             try {
                 $user = $provider->getResourceOwner($token);
                 if ($user) {
-                    if ($user->getKodeProvinsi() === '14' && $user->getKodeKabupaten() === '00') {
-                        $row = UserModel::row('*', ['email=' => $user->getEmail()]);
-                        if (!$row) {
+                    if ($user->getKodeProvinsi() == '14' && $user->getKodeKabupaten() == '00') {
+                        if (!UserModel::exists(['email=' => $user->getEmail()])) {
                             try {
                                 UserModel::create(
                                     [
@@ -345,35 +345,44 @@ class AuthHandler extends ActionHandler
                                         'nip' => $user->getNipBaru(),
                                         'jabatan' => $user->getJabatan(),
                                         'instansi' => 'BPS Provinsi Riau',
-                                        'tingkat' => 'Provinsi',
+                                        'tingkat' => 1,
                                         'nomor_wa' => '12345678910',
-                                        'role' => 'user,viewer',
+                                        'role' => RoleEnum::OPERATOR . ',' . RoleEnum::VIEWER,
                                         'is_active' => 1,
                                         'create_at' => local_time()
                                     ]
                                 );
-                                $row = UserModel::row('*', ['email=' => $user->getEmail()]);
+                                
                             } catch (Exception $e) {
                                 session()->addFlashError('Gagal menambahkan akun internal secara otomatis. Error:' . $e->getMessage());
                             }
                         }
-                        if ($row['is_active'] == 0) {
-                            session()->addFlashWarning('Status pengguna tidak aktif. Silahkan menghubungi admin untuk aktivasi.');
+                        
+                        $row = UserModel::row('*', ['email=' => $user->getEmail()]);
+                        if($row){
+                            if($row['is_active'] != 1){
+                                session()->addFlashWarning('Status pengguna tidak aktif. Silahkan menghubungi admin untuk aktivasi.');
+                                return redirect_uri(auth()->getProvider()->getLoginUri());
+                            }else{
+                                session()->set(auth()->getProvider()->getUserIdAttribute(), strval($row['id']));
+                                $roles = explode(',', $row['role']);
+                                $userData = [
+                                    AuthMiddleware::USERID => $row['id'],
+                                    AuthMiddleware::ROLES => $roles,
+                                    AuthMiddleware::PERMISSIONS => auth()->getProvider()->getPermissions($roles),
+                                    AuthMiddleware::DATA => ['email' => $row['email'], 'nama' => $row['nama'], 'hp' => $row['nomor_wa']]
+                                ];
+                                $userHash = array_encode($userData);
+                                session()->set(auth()->getProvider()->getUserHashAttribute(), $userHash);
+                                session()->addFlashSuccess("Selamat datang '" . ucfirst($row['nama'] . "'"));
+        
+                                return redirect_to(ResourceEnum::DASHBOARD);
+                            }
+                        }else{
+                            session()->addFlashWarning('Gagal mengambil data pengguna.');
                             return redirect_uri(auth()->getProvider()->getLoginUri());
                         }
-                        session()->set(auth()->getProvider()->getUserIdAttribute(), strval($row['id']));
-                        $roles = explode(',', $row['role']);
-                        $userData = [
-                            AuthMiddleware::USERID => $row['id'],
-                            AuthMiddleware::ROLES => $roles,
-                            AuthMiddleware::PERMISSIONS => auth()->getProvider()->getPermissions($roles),
-                            AuthMiddleware::DATA => ['email' => $row['email'], 'nama' => $row['nama'], 'hp' => $row['nomor_wa']]
-                        ];
-                        $userHash = array_encode($userData);
-                        session()->set(auth()->getProvider()->getUserHashAttribute(), $userHash);
-                        session()->addFlashSuccess("Selamat datang '" . ucfirst($row['nama'] . "'"));
-
-                        return redirect_to(ResourceEnum::DASHBOARD);
+                        
                     } else {
                         session()->unset('oauth2state');
                         $provider = $this->getSSOProvider();
@@ -381,7 +390,7 @@ class AuthHandler extends ActionHandler
                         $params['page'] = 'LOGIN';
                         $params['breadcrumbs'] = [];
                         $params['logout_url'] = $logout_url;
-                        return view('auth_forbidden', $params, $response, 'frontend');
+                        return view('forbidden', $params, $response, 'frontend');
                     }
                 }
                 // echo "Nama : ".$user->getName();

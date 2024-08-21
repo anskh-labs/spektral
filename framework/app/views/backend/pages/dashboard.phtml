@@ -1,7 +1,7 @@
-<div class="container">
-    <div class="row mb-5">
+<div class="container mb-5">
+    <div class="row mb-3">
         <h2 class="text-primary py-3">SELAMAT DATANG DI SPEKTRAL BACKEND</h2>
-        <div class="row mb-4">
+        <div class="row">
             <div class="col-4">
                 <div class="card">
                     <div class="card-body d-flex align-items-center">
@@ -12,9 +12,9 @@
                         </div>
                         <div>
                             <div class="fs-6 fw-semibold text-primary">
-                                <div class="d-flex flex-column"><span class="text-secondary" style="font-size: 10pt;"><?= $pengguna['aktif'] ?> Pengguna Aktif</span><span class="text-dark" style="font-size: 10pt;"><?= $pengguna['tidak_aktif'] ?> Pengguna Tidak Aktif</span></div>
+                                <div class="d-flex flex-column"><span class="text-secondary" style="font-size: 10pt;"><?= $pengguna_aktif ?> Pengguna Aktif</span><span class="text-dark" style="font-size: 10pt;"><?= $pengguna_tidak_aktif ?> Pengguna Tidak Aktif</span></div>
                             </div>
-                            <div class="text-medium-emphasis text-uppercase fw-semibold small"><span class="text-primary"><?= $pengguna['aktif'] + $pengguna['tidak_aktif'] ?> Total Pengguna</span></div>
+                            <div class="text-medium-emphasis text-uppercase fw-semibold small"><span class="text-primary"><?= $pengguna_aktif + $pengguna_tidak_aktif ?> Total Pengguna</span></div>
                         </div>
                     </div>
                 </div>
@@ -29,9 +29,9 @@
                         </div>
                         <div>
                             <div class="fs-6 fw-semibold text-info">
-                                <div class="d-flex flex-column"><span class="text-secondary" style="font-size: 10pt;"><?= $modul_pembinaan['aktif'] ?> Modul Pembinaan Aktif</span><span class="text-dark" style="font-size: 10pt;"><?= $modul_pembinaan['tidak_aktif'] ?> Modul Pembinaan Tidak Aktif</span></div>
+                                <div class="d-flex flex-column"><span class="text-secondary" style="font-size: 10pt;"><?= $testimoni['aktif'] ?> Testimoni Aktif</span><span class="text-dark" style="font-size: 10pt;"><?= $testimoni['tidak_aktif'] ?> Testimoni Tidak Aktif</span></div>
                             </div>
-                            <div class="text-medium-emphasis text-uppercase fw-semibold small"><span class="text-info"><?= $modul_pembinaan['aktif'] + $modul_pembinaan['tidak_aktif'] ?> Total Modul Pembinaan</span></div>
+                            <div class="text-medium-emphasis text-uppercase fw-semibold small"><span class="text-info"><?= $testimoni['aktif'] + $testimoni['tidak_aktif'] ?> Total Testimoni</span></div>
                         </div>
                     </div>
                 </div>
@@ -42,12 +42,164 @@
                         <div class="me-3 text-white bg-warning p-3"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-xl" viewBox="0 0 512 512" role="img">undefined<path fill="var(--ci-primary-color, currentColor)" d="M411.6,343.656l-72.823-47.334,27.455-50.334A80.23,80.23,0,0,0,376,207.681V128a112,112,0,0,0-224,0v79.681a80.236,80.236,0,0,0,9.768,38.308l27.455,50.333L116.4,343.656A79.725,79.725,0,0,0,80,410.732V496H448V410.732A79.727,79.727,0,0,0,411.6,343.656ZM416,464H112V410.732a47.836,47.836,0,0,1,21.841-40.246l97.66-63.479-41.64-76.341A48.146,48.146,0,0,1,184,207.681V128a80,80,0,0,1,160,0v79.681a48.146,48.146,0,0,1-5.861,22.985L296.5,307.007l97.662,63.479h0A47.836,47.836,0,0,1,416,410.732Z" class="ci-primary"></path></svg></div>
                         <div>
                             <div class="fs-6 fw-semibold text-warning">
-                                <div class="d-flex flex-column"><span class="text-secondary" style="font-size: 10pt;"><?= $modul_literasi['aktif'] ?> Modul Literasi Aktif</span><span class="text-dark" style="font-size: 10pt;"><?= $modul_literasi['tidak_aktif'] ?> Modul Literasi Tidak Aktif</span></div>
+                                <div class="d-flex flex-column"><span class="text-secondary" style="font-size: 10pt;"><?= $dokumentasi['aktif'] ?> Dokumentasi Pembinaan Aktif</span><span class="text-dark" style="font-size: 10pt;"><?= $dokumentasi['tidak_aktif'] ?> Dokumentasi Pembinaan Tidak Aktif</span></div>
                             </div>
-                            <div class="text-medium-emphasis text-uppercase fw-semibold small"><span class="text-warning"><?= $modul_literasi['aktif'] + $modul_literasi['tidak_aktif'] ?> Total Modul Literasi</span></div>
+                            <div class="text-medium-emphasis text-uppercase fw-semibold small"><span class="text-warning"><?= $dokumentasi['aktif'] + $dokumentasi['tidak_aktif'] ?> Total Dokumentasi Pembinaan</span></div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <div class="text-primary fw-bold">Tabel Jumlah Permintaan Pembinaan menurut Status dan Bulan</div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="myTable" class="table table-bordered table-striped table-hover" style="width:100%">
+                    <thead class="table-light">
+                        <th class="text-center">No.</th>
+                        <th class="text-center">Bulan</th>
+                        <th class="text-center">Dibuka</th>
+                        <th class="text-center">Diproses</th>
+                        <th class="text-center">Menunggu Balasan</th>
+                        <th class="text-center">Disetujui</th>
+                        <th class="text-center">Ditutup</th>
+                    </thead>
+                    <tbody>
+                    <?php 
+                    
+                    if($permintaan) {
+                        $no = 1;
+                        foreach ($permintaan as $row) {
+                        ?>
+                            <tr>
+                                <td width="60" class="text-center"><?= $no++ ?></td>
+                                <td width="auto"><?= date('F', mktime(0, 0, 0, $row['bln'], 10)) ?></td>
+                                <td width="auto"><?= $row['dibuka'] ?? 0 ?></td>
+                                <td width="auto"><?= $row['diproses'] ?? 0 ?></td>
+                                <td width="auto"><?= $row['menunggu'] ?? 0 ?></td>
+                                <td width="auto"><?= $row['disetujui'] ?? 0 ?></td>
+                                <td width="auto"><?= $row['ditutup'] ?? 0 ?></td>
+                            </tr>
+                        <?php }
+                        }else{?>
+                            <tr>
+                                <td class="text-center" colspan="7">--- NO DATA ---</td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <div class="text-primary fw-bold">Tabel Jumlah Modul Pembinaan menurut Kategori</div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="myTable" class="table table-bordered table-striped table-hover" style="width:100%">
+                    <thead class="table-light">
+                        <th class="text-center">No.</th>
+                        <th class="text-center">Kategori</th>
+                        <th class="text-center">Aktif</th>
+                        <th class="text-center">Tidak Aktif</th>
+                    </thead>
+                    <tbody>
+                    <?php 
+                    
+                    if($pembinaan) {
+                        foreach ($pembinaan as $row) {
+                        ?>
+                            <tr>
+                                <td width="60" class="text-center"><?= $row['kategori'] ?></td>
+                                <td width="auto"><?= $row['nama'] ?? '' ?></td>
+                                <td width="auto"><?= $row['aktif'] ?? 0 ?></td>
+                                <td width="auto"><?= $row['tidak_aktif'] ?? 0 ?></td>
+                            </tr>
+                        <?php }
+                        }else{?>
+                            <tr>
+                                <td class="text-center" colspan="4">--- NO DATA ---</td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <div class="text-primary fw-bold">Tabel Jumlah Modul Literasi menurut Kategori</div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="myTable" class="table table-bordered table-striped table-hover" style="width:100%">
+                    <thead class="table-light">
+                        <th class="text-center">No.</th>
+                        <th class="text-center">Kategori</th>
+                        <th class="text-center">Aktif</th>
+                        <th class="text-center">Tidak Aktif</th>
+                    </thead>
+                    <tbody>
+                    <?php 
+                    
+                    if($literasi) {
+                        foreach ($literasi as $row) {
+                        ?>
+                            <tr>
+                                <td width="60" class="text-center"><?= $row['kategori'] ?></td>
+                                <td width="auto"><?= $row['nama'] ?? '' ?></td>
+                                <td width="auto"><?= $row['aktif'] ?? 0 ?></td>
+                                <td width="auto"><?= $row['tidak_aktif'] ?? 0 ?></td>
+                            </tr>
+                        <?php }
+                        }else{?>
+                            <tr>
+                                <td class="text-center" colspan="4">--- NO DATA ---</td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <div class="text-primary fw-bold">Tabel Jumlah Pengguna menurut Kategori</div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="myTable" class="table table-bordered table-striped table-hover" style="width:100%">
+                    <thead class="table-light">
+                        <th class="text-center">No.</th>
+                        <th class="text-center">Kategori</th>
+                        <th class="text-center">Aktif</th>
+                        <th class="text-center">Tidak Aktif</th>
+                    </thead>
+                    <tbody>
+                    <?php 
+                    
+                    if($pengguna) {
+                        $no=1;
+                        foreach ($pengguna as $row) {
+                        ?>
+                            <tr>
+                                <td width="60" class="text-center"><?= $no++ ?></td>
+                                <td width="auto"><?= $row['kategori'] ?? '' ?></td>
+                                <td width="auto"><?= $row['aktif'] ?? 0 ?></td>
+                                <td width="auto"><?= $row['tidak_aktif'] ?? 0 ?></td>
+                            </tr>
+                        <?php }
+                        }else{?>
+                            <tr>
+                                <td class="text-center" colspan="4">--- NO DATA ---</td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
