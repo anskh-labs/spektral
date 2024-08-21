@@ -10,7 +10,7 @@ if(getcwd() !== FWPATH){
 }
 
 /** load autoload composer */
-require 'vendor/autoload.php';
+require  'vendor/autoload.php';
 
 /** Load .env file for read environment */
 \Dotenv\Dotenv::createImmutable(FWPATH)->load();
