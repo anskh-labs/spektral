@@ -259,7 +259,7 @@ class AuthHandler extends ActionHandler
                             $template = template_config('register');
                             $mail->Subject = $template['subject'];
                             $message = str_replace('%client_name%', $model->nama, $template['html_message']);
-                            $message = str_replace('%client_url%', base_url(route('activation', $token)), $message);
+                            $message = str_replace('%client_url%', base_url(route(ResourceEnum::ACTIVATION, $token)), $message);
                             $mail->Body    = $message;
 
                             $mail->send();
